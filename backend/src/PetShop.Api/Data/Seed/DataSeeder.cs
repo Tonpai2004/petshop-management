@@ -93,6 +93,39 @@ public sealed class DataSeeder
         new() { Id = 7, Name = "Habitat", Description = "Beds, cages, tanks and filters" }
     ];
 
+    // Free stock photos from Unsplash (unsplash.com/license), one per sample product in the same order,
+    // so the catalogue looks like a real shop on first run. Uploading a photo in the app replaces them.
+    private static readonly string[] SamplePhotoIds =
+    [
+        "photo-1676193866128-03a926df76ef",
+        "photo-1589924691995-400dc9ecc119",
+        "photo-1645773619957-ec1d128d0aa2",
+        "photo-1724331524574-12356be7053f",
+        "photo-1592237163215-c97b487faeb5",
+        "photo-1603529387711-5de5b3e6e799",
+        "photo-1592468254646-bb599a5174ad",
+        "photo-1626544379809-e0031867d50c",
+        "photo-1738504821302-0901a5c2b5d9",
+        "photo-1535294435445-d7249524ef2e",
+        "photo-1718975463931-79f68f4d5f75",
+        "photo-1595343631033-53c8fc1b78fe",
+        "photo-1687425961065-46efeb465c66",
+        "photo-1679224106783-c21b1841412a",
+        "photo-1661322563051-15248c0568a1",
+        "photo-1647002380351-ba23ff97c428",
+        "photo-1727510160238-3c17eb5e6120",
+        "photo-1675430426271-d74b542f21e4",
+        "photo-1597595735781-6a57fb8e3e3d",
+        "photo-1664956618021-73c47736845e",
+        "photo-1646195164326-124b72fb9d34",
+        "photo-1636045466232-539c7bd7817e",
+        "photo-1676918555382-fcd06a483e25",
+        "photo-1767023024653-3d6f74909ccf"
+    ];
+
+    private static string SamplePhotoUrl(string photoId) =>
+        $"https://images.unsplash.com/{photoId}?auto=format&fit=crop&w=800&q=75";
+
     private static List<Product> BuildProducts()
     {
         var products = new List<Product>
@@ -128,6 +161,7 @@ public sealed class DataSeeder
         {
             products[i].Id = i + 1;
             products[i].CreatedAt = products[i].UpdatedAt = firstArrival.AddDays(i + i / 3).AddHours(i % 6);
+            products[i].ImageUrl = SamplePhotoUrl(SamplePhotoIds[i]);
         }
 
         // One old line the shop no longer sells, to show how discontinued products look.
