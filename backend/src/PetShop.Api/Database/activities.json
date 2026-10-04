@@ -212,7 +212,52 @@
     "action": "ProductCreated",
     "entityType": "Product",
     "entityId": 24,
-    "summary": "added Puppy Dry Food Chicken & Milk with 15 in stock",
+    "summary": "added Puppy Dry Food Chicken \u0026 Milk with 15 in stock",
     "createdAt": "2026-10-01T08:00:00Z"
+  },
+  {
+    "id": 25,
+    "userId": 2,
+    "action": "SignedIn",
+    "entityType": "User",
+    "entityId": 2,
+    "summary": "signed in",
+    "createdAt": "2026-10-04T07:05:21.231036Z"
+  },
+  {
+    "id": 26,
+    "userId": 1,
+    "action": "SignedIn",
+    "entityType": "User",
+    "entityId": 1,
+    "summary": "signed in",
+    "createdAt": "2026-10-04T08:13:07.113584Z"
+  },
+  {
+    "id": 27,
+    "userId": 1,
+    "action": "SignedIn",
+    "entityType": "User",
+    "entityId": 1,
+    "summary": "signed in",
+    "createdAt": "2026-10-04T08:14:59.367889Z"
+  },
+  {
+    "id": 28,
+    "userId": 1,
+    "action": "SignedIn",
+    "entityType": "User",
+    "entityId": 1,
+    "summary": "signed in",
+    "createdAt": "2026-10-04T08:16:50.047912Z"
+  },
+  {
+    "id": 29,
+    "userId": 2,
+    "action": "SignedIn",
+    "entityType": "User",
+    "entityId": 2,
+    "summary": "signed in",
+    "createdAt": "2026-10-04T08:40:39.377258Z"
   }
 ]
