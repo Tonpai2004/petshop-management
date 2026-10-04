@@ -23,7 +23,7 @@ cd backend/src/PetShop.Api
 dotnet run --launch-profile Development
 ```
 
-API จะรันอยู่ที่ http://localhost:5080 และดูรายการ API ทั้งหมดได้ที่ http://localhost:5080/swagger
+API จะรันอยู่ที่ localhost และดูรายการ API ทั้งหมดได้ที่ swagger
 
 **2. เปิดหน้าเว็บ (หน้าบ้าน)** โดยเปิด terminal อีกหน้าต่างหนึ่ง
 
