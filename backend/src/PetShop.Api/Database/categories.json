@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Food",
+    "description": "Dry and wet food for every life stage"
+  },
+  {
+    "id": 2,
+    "name": "Treats",
+    "description": "Snacks, chews and training rewards"
+  },
+  {
+    "id": 3,
+    "name": "Toys",
+    "description": "Balls, teasers and enrichment toys"
+  },
+  {
+    "id": 4,
+    "name": "Accessories",
+    "description": "Collars, leashes, bowls and carriers"
+  },
+  {
+    "id": 5,
+    "name": "Grooming",
+    "description": "Shampoo, brushes and litter"
+  },
+  {
+    "id": 6,
+    "name": "Health",
+    "description": "Supplements and flea and tick care"
+  },
+  {
+    "id": 7,
+    "name": "Habitat",
+    "description": "Beds, cages, tanks and filters"
+  }
+]

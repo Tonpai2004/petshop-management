@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "passwordHash": "$2a$11$3y.EC0pLWlXsUXrKE.ny0.penWzBKrCQtcHa5i23rHzk5bPFWCuPi",
+    "fullName": "Win Methawin",
+    "role": "Admin",
+    "isActive": true,
+    "createdAt": "2026-09-01T02:00:00Z",
+    "lastLoginAt": null,
+    "failedLoginCount": 0,
+    "lockoutEndsAt": null
+  },
+  {
+    "id": 2,
+    "username": "staff",
+    "passwordHash": "$2a$11$x9O7gQIKrPhwQGMlbvx5A.halAzTtHRZ/B8C7aVRyzzyky2BPVGPW",
+    "fullName": "Bie Sukrit",
+    "role": "Staff",
+    "isActive": true,
+    "createdAt": "2026-09-01T02:00:00Z",
+    "lastLoginAt": null,
+    "failedLoginCount": 0,
+    "lockoutEndsAt": null
+  }
+]
