@@ -1,14 +1,5 @@
 "use client";
 
-import { Eye, MoreHorizontal, PackagePlus, Pencil, Trash2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
@@ -22,6 +13,7 @@ import { formatCurrency, formatNumber, formatRelative } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import type { Product } from "../types";
 import { PetTypeTag } from "./pet-type-tag";
+import { ProductActionsMenu } from "./product-actions-menu";
 import { ProductThumb } from "./product-thumb";
 import { StockBadge } from "./stock-badge";
 
@@ -131,47 +123,15 @@ export function ProductsTable({
                     <p>{formatRelative(product.updatedAt)}</p>
                     {product.updatedByName && <p>by {product.updatedByName}</p>}
                   </TableCell>
-                  {/* Clicks in the menu shouldn't also open the detail sheet behind it. */}
-                  <TableCell className="pr-4" onClick={(event) => event.stopPropagation()}>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger
-                        render={
-                          <Button
-                            variant="ghost"
-                            size="icon-sm"
-                            aria-label={`Actions for ${product.name}`}
-                          />
-                        }
-                      >
-                        <MoreHorizontal />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end" className="w-44">
-                        <DropdownMenuItem onClick={() => onView(product)}>
-                          <Eye />
-                          View details
-                        </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => onAdjustStock(product)}>
-                          <PackagePlus />
-                          Adjust stock
-                        </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => onEdit(product)}>
-                          <Pencil />
-                          Edit
-                        </DropdownMenuItem>
-                        {canDelete && (
-                          <>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem
-                              variant="destructive"
-                              onClick={() => onDelete(product)}
-                            >
-                              <Trash2 />
-                              Delete
-                            </DropdownMenuItem>
-                          </>
-                        )}
-                      </DropdownMenuContent>
-                    </DropdownMenu>
+                  <TableCell className="pr-4">
+                    <ProductActionsMenu
+                      product={product}
+                      canDelete={canDelete}
+                      onView={onView}
+                      onEdit={onEdit}
+                      onAdjustStock={onAdjustStock}
+                      onDelete={onDelete}
+                    />
                   </TableCell>
                 </TableRow>
               ))}

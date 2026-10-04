@@ -105,7 +105,7 @@ export function ProductsToolbar({ filters, categories, onChange }: ProductsToolb
         )}
       </div>
 
-      <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center">
+      <div className="grid grid-cols-2 gap-2 max-[359px]:grid-cols-1 sm:flex sm:flex-wrap sm:items-center">
         <FilterSelect
           label="Filter by category"
           value={filters.categoryId}

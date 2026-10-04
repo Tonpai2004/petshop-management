@@ -43,11 +43,11 @@ export function StockHealth({ summary }: { summary?: InventorySummary }) {
       </CardHeader>
       <CardContent>
         {summary ? (
-          <div className="grid gap-4">
+          <div className="grid grid-cols-1 gap-4">
             {STOCK_LEVELS.map(({ value, label }) => {
               const share = percent(counts[value], summary.totalProducts);
               return (
-                <div key={value} className="grid gap-1.5">
+                <div key={value} className="grid min-w-0 gap-1.5">
                   <div className="flex items-center justify-between text-sm">
                     <span className="flex items-center gap-2">
                       <span className={cn("size-2 rounded-full", STOCK_STYLES[value].dot)} />
@@ -74,7 +74,7 @@ export function StockHealth({ summary }: { summary?: InventorySummary }) {
               {restockList.length === 0 ? (
                 <p className="text-muted-foreground text-sm">Nothing is running low. Nice.</p>
               ) : (
-                <ul className="grid gap-1">
+                <ul className="grid grid-cols-1 gap-1">
                   {restockList.map((product) => (
                     <li
                       key={product.id}

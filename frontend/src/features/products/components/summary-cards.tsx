@@ -46,7 +46,7 @@ export function SummaryCards({ summary }: { summary?: InventorySummary }) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+    <div className="grid grid-cols-2 gap-3 max-[359px]:grid-cols-1 sm:gap-4 lg:grid-cols-4">
       <StatCard
         label="Products"
         value={formatNumber(summary.totalProducts)}

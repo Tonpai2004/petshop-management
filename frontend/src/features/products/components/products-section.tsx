@@ -16,6 +16,7 @@ import { DEFAULT_PRODUCT_QUERY } from "../constants";
 import { useProductDialogs } from "../context/product-dialogs";
 import { useCategories, useProducts } from "../hooks/use-products";
 import type { Product } from "../types";
+import { ProductsList } from "./products-list";
 import { ProductsPagination } from "./products-pagination";
 import { ProductsTable } from "./products-table";
 import {
@@ -68,6 +69,14 @@ export function ProductsSection() {
     }
   };
 
+  const productActions = {
+    canDelete: isAdmin,
+    onView: dialogs.openDetails,
+    onEdit: dialogs.openEdit,
+    onAdjustStock: dialogs.openAdjustStock,
+    onDelete: confirmDelete,
+  };
+
   const isFiltered = JSON.stringify(debouncedFilters) !== JSON.stringify(DEFAULT_FILTERS);
   const isEmpty = data && data.items.length === 0;
 
@@ -81,9 +90,11 @@ export function ProductsSection() {
             {isExporting ? <Loader2 className="animate-spin" /> : <Download />}
             <span className="hidden sm:inline">Export CSV</span>
           </Button>
-          <Button onClick={dialogs.openCreate}>
+          <Button onClick={dialogs.openCreate} aria-label="Add product">
             <Plus />
-            Add product
+            {/* "Add" is enough on a phone, where the card header has very little room. */}
+            <span className="sm:hidden">Add</span>
+            <span className="hidden sm:inline">Add product</span>
           </Button>
         </CardAction>
       </CardHeader>
@@ -133,15 +144,13 @@ export function ProductsSection() {
               isFetching && !isLoading ? "opacity-60 transition-opacity" : "transition-opacity"
             }
           >
-            <ProductsTable
-              products={data?.items}
-              isLoading={isLoading}
-              canDelete={isAdmin}
-              onView={dialogs.openDetails}
-              onEdit={dialogs.openEdit}
-              onAdjustStock={dialogs.openAdjustStock}
-              onDelete={confirmDelete}
-            />
+            {/* Cards on phones and tablets, the full table from laptop size up. */}
+            <div className="lg:hidden">
+              <ProductsList products={data?.items} isLoading={isLoading} {...productActions} />
+            </div>
+            <div className="hidden lg:block">
+              <ProductsTable products={data?.items} isLoading={isLoading} {...productActions} />
+            </div>
           </div>
         )}
 

@@ -5,7 +5,7 @@ import { Search } from "lucide-react";
 import { DASHBOARD_SEARCH_INPUT_ID, DASHBOARD_SECTIONS } from "@/config/routes";
 import { cn } from "@/lib/utils";
 
-function jumpToSearch() {
+export function jumpToSearch() {
   document
     .getElementById(DASHBOARD_SECTIONS.products)
     ?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -56,7 +56,7 @@ export function QuickSearch({ className }: { className?: string }) {
         type="button"
         onClick={jumpToSearch}
         aria-label="Search products"
-        className="flex size-9 items-center justify-center rounded-lg text-white/60 transition-colors hover:bg-white/10 hover:text-white lg:hidden"
+        className="hidden size-9 items-center justify-center rounded-lg text-white/60 transition-colors hover:bg-white/10 hover:text-white md:flex lg:hidden"
       >
         <Search className="size-[18px]" />
       </button>
