@@ -228,7 +228,7 @@ dotnet test
 | Products   | `GET /api/products/activity`                               | บันทึกกิจกรรมทั้งหมด                                          |
 | Products   | `GET /api/products/{id}/activity`                          | บันทึกกิจกรรมของสินค้าแต่ละชิ้น                    |
 
-ดูรายละเอียดและทดลองยิงได้ที่ Swagger (http://localhost:5080/swagger)
+ดูรายละเอียดและทดลองยิงได้ที่ Swagger
 
 **ชุดทดสอบ:** มีเทสอัตโนมัติ 41 ตัว รันด้วย `dotnet test` ครอบคลุม
 
